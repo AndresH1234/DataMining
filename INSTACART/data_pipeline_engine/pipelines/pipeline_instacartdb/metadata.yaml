@@ -1,0 +1,60 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: data_loaders/loadfrommysql.py
+    file_source:
+      path: data_loaders/loadfrommysql.py
+  downstream_blocks:
+  - extracttosnowflake
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: LoadFromMYSQL
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: loadfrommysql
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: ExtractToSnowflake
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - loadfrommysql
+  uuid: extracttosnowflake
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2025-01-31 16:18:26.064503+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: pipeline_instacartDB
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: pipeline_instacartdb
+variables_dir: /Users/mateoherrera/.mage_data/data_pipeline_engine
+widgets: []
